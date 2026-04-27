@@ -6,7 +6,7 @@
 #include <vector>
 #include <set>
 
-// Функция получения физического пути к файлу процесса
+
 std::wstring GetProcessPath(DWORD processID) {
     wchar_t path[MAX_PATH] = L"Access Denied (Requires Admin)";
     HANDLE hProcess = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, processID);
@@ -22,7 +22,7 @@ std::wstring GetProcessPath(DWORD processID) {
     return std::wstring(path);
 }
 
-// Функция поиска имени процесса по его PID
+//PID
 std::wstring GetProcessNameByPID(DWORD processID) {
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     if (hSnapshot != INVALID_HANDLE_VALUE) {
@@ -41,17 +41,14 @@ std::wstring GetProcessNameByPID(DWORD processID) {
     return L"";
 }
 
-// Функция принудительного завершения процесса с защитой
 void KillProcess(DWORD processID) {
     std::wstring processName = GetProcessNameByPID(processID);
 
-    // Белый список системных процессов
     std::set<std::wstring> whiteList = {
         L"System", L"smss.exe", L"csrss.exe", L"wininit.exe",
         L"services.exe", L"lsass.exe", L"winlogon.exe", L"System Idle Process"
     };
 
-    // Проверка на критические процессы
     if (processID == 0 || processID == 4 || whiteList.count(processName)) {
         std::cout << "[-] ACCESS DENIED: " << processID << " is a CRITICAL system process!\n";
         return;
