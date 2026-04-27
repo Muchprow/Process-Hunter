@@ -32,6 +32,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ---
 
 ## 💻 System Compatibility
-**Developed on**: Windows 11 Pro (21H2)
-**Tested on**: Windows 11 Pro (21H2)
-**Recommended for**: Windows 10 / 11
+* **Developed on**: Windows 11 Pro (21H2)
+* **Tested on**: Windows 11 Pro (21H2)
+* **Recommended for**: Windows 10 / 11
