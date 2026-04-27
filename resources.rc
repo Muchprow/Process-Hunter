@@ -1,14 +1,12 @@
-// 1. Подключаем иконку
 MAINICON ICON "icon.ico"
 
-// 2. Оформляем паспорт программы
 1 VERSIONINFO
 FILEVERSION     1,0,0,0
 PRODUCTVERSION  1,0,0,0
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "040904E4" // Код для английского языка
+        BLOCK "040904E4"
         BEGIN
             VALUE "CompanyName",      "Muchprow"
             VALUE "FileDescription",  "Advanced Process Hunter"
