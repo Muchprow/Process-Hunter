@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1777287259 source:d:\process hunter\process hunter\main.cpp
+	<windows.h>
+	<tlhelp32.h>
+	<shlobj.h>
+	<iostream>
+	<string>
+	<vector>
+	<set>
+
+1777284666 source:d:\process hunter\process hunter\resources.rc
+
